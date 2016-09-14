@@ -39,7 +39,7 @@ public class BotControlScript : MonoBehaviour
 		// initialising reference variables
 		anim = GetComponent<Animator>();					  
 		col = GetComponent<CapsuleCollider>();				
-		enemy = GameObject.Find("Enemy").transform;	
+		//enemy = GameObject.Find("Enemy").transform;	
 		if(anim.layerCount ==2)
 			anim.SetLayerWeight(1, 1);
 	}
@@ -61,7 +61,7 @@ public class BotControlScript : MonoBehaviour
 
         // LOOK AT ENEMY
         float speed = 1.0f;
-        float rotationSpeed = 1.0f;
+        float rotationSpeed = 20.0f;
         float translation = Input.GetAxis("Vertical") * speed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
         translation *= Time.deltaTime;
@@ -69,12 +69,20 @@ public class BotControlScript : MonoBehaviour
         transform.Translate(0, 0, translation);
         transform.Rotate(0, rotation, 0);
 
-        /*
+        
         if (Input.GetButton("Fire3"))
         {
-            anim.SetBool("Dance", true);
+            if (currentBaseState.fullPathHash != gstyleState)
+            {
+                anim.SetBool("Dance", true);
+            }
+            else
+            {
+                anim.SetBool("Dance", false);
+            }
         }
-        */
+        
+        
 
         // if we hold Alt..
         if (Input.GetButton("Fire2"))
