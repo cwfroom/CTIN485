@@ -9,10 +9,13 @@ public class UnitProperty : MonoBehaviour {
     private NavMeshAgent m_NavAgent;
     private Vector3 m_Target;
 
+    private AnimationStateController m_AnimationStateController;
+
     // Use this for initialization
     void Start () {
         m_NavAgent = GetComponent<NavMeshAgent>();
         m_Target = transform.position;
+        m_AnimationStateController = GetComponentInChildren<AnimationStateController>();
     }
 	
     public static UnitProperty Create(GameManager gmr, string type, Vector3 initialPos, int team){
@@ -38,6 +41,7 @@ public class UnitProperty : MonoBehaviour {
     {
         Debug.Log(target);
         m_Target = target;
+        m_AnimationStateController.UpdateAnimationState(AnimationState.Walking);
     }
 
     public void TakeAttack(UnitProperty attacker)
