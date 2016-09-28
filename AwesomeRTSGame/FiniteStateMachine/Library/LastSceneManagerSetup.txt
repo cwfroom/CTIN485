@@ -1,0 +1,4 @@
+sceneSetups:
+- path: D:/Projects/CTIN485/AwesomeRTSGame/AwesomeRTSGame/Assets/Scenes/DefaultLevel.unity
+  isLoaded: 1
+  isActive: 1

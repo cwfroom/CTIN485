@@ -3,35 +3,47 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
     private UnitProperty m_SelectedUnit;
+    public float m_SpawnWait = 2;
+    private bool m_Spawning = true;
 
-    private int currentTeam = 1;
+    public Transform m_LeftLowerCorner;
+    public Transform m_RightUpperCorner;
+
 
 	// Use this for initialization
 	void Start () {
-	
+        StartCoroutine(SpawnWaves());
 	}
 
-    public void SpawnUnit(Vector3 SpawnPos)
+    public Vector3 GenerateSpawnPosition()
     {
-        if (currentTeam == 1)
+        Vector3 pos = new Vector3(Random.Range(m_LeftLowerCorner.position.x, m_RightUpperCorner.position.x),
+                                    0.5f,
+                                    Random.Range(m_LeftLowerCorner.position.y, m_RightUpperCorner.position.y));
+        Collider[] hitColliders = Physics.OverlapSphere(pos, 3.0f);
+        /*
+        if (hitColliders.Length != 0)
         {
-            UnitProperty newUnit = UnitProperty.Create(this, "BlueBot", SpawnPos, 0);
-        }else
-        {
-            UnitProperty newUnit = UnitProperty.Create(this, "RedBot", SpawnPos, 1);
+            return GenerateSpawnPosition();
         }
+        */
+        return pos;
+    }
+        
 
+    IEnumerator SpawnWaves()
+    {
+        yield return new WaitForSeconds(m_SpawnWait);
+        while (m_Spawning)
+        {
+            Vector3 pos = GenerateSpawnPosition();
+            CoinProperty.Create(this, pos);
+            yield return new WaitForSeconds(m_SpawnWait);
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            currentTeam = 1;
-        }else if (Input.GetKeyDown(KeyCode.E))
-        {
-            currentTeam = 2;
-        }
 
 	}
     
