@@ -27,7 +27,8 @@ public class MouseSelection : MonoBehaviour {
 
                 }else
                 {
-                    m_Gmr.SelectUnit(null);
+                    m_Gmr.SpawnUnit(new Vector3(Input.mousePosition.x, Input.mousePosition.y, m_CameraDepth));
+
                 }
             }
             else

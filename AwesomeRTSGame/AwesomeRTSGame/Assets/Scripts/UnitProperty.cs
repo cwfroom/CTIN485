@@ -19,7 +19,7 @@ public class UnitProperty : MonoBehaviour {
     }
 	
     public static UnitProperty Create(GameManager gmr, string type, Vector3 initialPos, int team){
-        string path = "Prefab/" + type;
+        string path = "Prefabs/" + type;
         GameObject nUnit = Instantiate(Resources.Load(path)) as GameObject;
         nUnit.transform.position = initialPos;
 
