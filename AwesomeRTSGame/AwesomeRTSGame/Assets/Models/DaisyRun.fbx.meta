@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 30406643c53710d4dbb2289c19b9f7a3
+timeCreated: 1475625000
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BackShoulder_L
+    100002: BackShoulder_R
+    100004: Daisy
+    100006: //RootNode
+    100008: Eyeball_L
+    100010: Eyeball_R
+    100012: FaceDetails
+    100014: FrontFoot_L
+    100016: FrontFoot_R
+    100018: FrontForearm_L
+    100020: FrontForearm_R
+    100022: FrontKnee_L
+    100024: FrontKnee_R
+    100026: FrontShoulder_L
+    100028: FrontShoulder_R
+    100030: FrontToes_L
+    100032: FrontToes_R
+    100034: HeadBase
+    100036: joint18
+    100038: joint18 1
+    100040: joint19
+    100042: joint19 1
+    100044: joint20
+    100046: joint20 1
+    100048: joint21
+    100050: joint21 1
+    100052: LowerJawBase
+    100054: LowerJawTip
+    100056: NeckBase
+    100058: Opossum
+    100060: OpossumBody
+    100062: pCylinder1
+    100064: pCylinder10
+    100066: pCylinder11
+    100068: pCylinder12
+    100070: pCylinder13
+    100072: pCylinder14
+    100074: pCylinder15
+    100076: pCylinder16
+    100078: pCylinder17
+    100080: pCylinder18
+    100082: pCylinder2
+    100084: pCylinder3
+    100086: pCylinder4
+    100088: pCylinder5
+    100090: pCylinder6
+    100092: pCylinder7
+    100094: pCylinder8
+    100096: pCylinder9
+    100098: PossumEar_L
+    100100: PossumEar_R
+    100102: PossumFriend
+    100104: PossumTail
+    100106: pSphere1
+    100108: Root
+    100110: Spine1
+    100112: Spine2
+    100114: Spine3
+    100116: SpineRoot
+    100118: Tail1
+    100120: Tail2
+    100122: Tail3
+    100124: TailRoot
+    100126: UpperJawBase
+    100128: UpperJawTip
+    400000: BackShoulder_L
+    400002: BackShoulder_R
+    400004: Daisy
+    400006: //RootNode
+    400008: Eyeball_L
+    400010: Eyeball_R
+    400012: FaceDetails
+    400014: FrontFoot_L
+    400016: FrontFoot_R
+    400018: FrontForearm_L
+    400020: FrontForearm_R
+    400022: FrontKnee_L
+    400024: FrontKnee_R
+    400026: FrontShoulder_L
+    400028: FrontShoulder_R
+    400030: FrontToes_L
+    400032: FrontToes_R
+    400034: HeadBase
+    400036: joint18
+    400038: joint18 1
+    400040: joint19
+    400042: joint19 1
+    400044: joint20
+    400046: joint20 1
+    400048: joint21
+    400050: joint21 1
+    400052: LowerJawBase
+    400054: LowerJawTip
+    400056: NeckBase
+    400058: Opossum
+    400060: OpossumBody
+    400062: pCylinder1
+    400064: pCylinder10
+    400066: pCylinder11
+    400068: pCylinder12
+    400070: pCylinder13
+    400072: pCylinder14
+    400074: pCylinder15
+    400076: pCylinder16
+    400078: pCylinder17
+    400080: pCylinder18
+    400082: pCylinder2
+    400084: pCylinder3
+    400086: pCylinder4
+    400088: pCylinder5
+    400090: pCylinder6
+    400092: pCylinder7
+    400094: pCylinder8
+    400096: pCylinder9
+    400098: PossumEar_L
+    400100: PossumEar_R
+    400102: PossumFriend
+    400104: PossumTail
+    400106: pSphere1
+    400108: Root
+    400110: Spine1
+    400112: Spine2
+    400114: Spine3
+    400116: SpineRoot
+    400118: Tail1
+    400120: Tail2
+    400122: Tail3
+    400124: TailRoot
+    400126: UpperJawBase
+    400128: UpperJawTip
+    4300000: OpossumBody
+    4300002: Eyeball_L
+    4300004: PossumEar_L
+    4300006: Eyeball_R
+    4300008: PossumEar_R
+    4300010: PossumTail
+    4300012: pCylinder1
+    4300014: pSphere1
+    4300016: pCylinder2
+    4300018: pCylinder3
+    4300020: pCylinder4
+    4300022: pCylinder5
+    4300024: pCylinder6
+    4300026: pCylinder7
+    4300028: pCylinder8
+    4300030: pCylinder9
+    4300032: pCylinder10
+    4300034: pCylinder11
+    4300036: pCylinder12
+    4300038: pCylinder13
+    4300040: pCylinder14
+    4300042: pCylinder15
+    4300044: pCylinder16
+    4300046: pCylinder17
+    4300048: pCylinder18
+    7400000: daisyRunning
+    7400002: daisyIdle
+    9500000: //RootNode
+    13700000: Eyeball_L
+    13700002: Eyeball_R
+    13700004: OpossumBody
+    13700006: pCylinder1
+    13700008: pCylinder10
+    13700010: pCylinder11
+    13700012: pCylinder12
+    13700014: pCylinder13
+    13700016: pCylinder14
+    13700018: pCylinder15
+    13700020: pCylinder16
+    13700022: pCylinder17
+    13700024: pCylinder18
+    13700026: pCylinder2
+    13700028: pCylinder3
+    13700030: pCylinder4
+    13700032: pCylinder5
+    13700034: pCylinder6
+    13700036: pCylinder7
+    13700038: pCylinder8
+    13700040: pCylinder9
+    13700042: PossumEar_L
+    13700044: PossumEar_R
+    13700046: PossumTail
+    13700048: pSphere1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: daisyRunning
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: PossumFriend
+        weight: 1
+      - path: PossumFriend/Daisy
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder1
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder2
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder3
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder4
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder5
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder6
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder7
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder8
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder9
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder10
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder11
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder12
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder13
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder14
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder15
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder16
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder17
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder18
+        weight: 1
+      - path: PossumFriend/Daisy/pSphere1
+        weight: 1
+      - path: PossumFriend/Opossum
+        weight: 1
+      - path: PossumFriend/Opossum/FaceDetails
+        weight: 1
+      - path: PossumFriend/Opossum/FaceDetails/Eyeball_L
+        weight: 1
+      - path: PossumFriend/Opossum/FaceDetails/Eyeball_R
+        weight: 1
+      - path: PossumFriend/Opossum/FaceDetails/PossumEar_L
+        weight: 1
+      - path: PossumFriend/Opossum/FaceDetails/PossumEar_R
+        weight: 1
+      - path: PossumFriend/Opossum/OpossumBody
+        weight: 1
+      - path: PossumFriend/PossumTail
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/SpineRoot
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_L
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_L/joint18
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_L/joint18/joint19
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_L/joint18/joint19/joint20
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_L/joint18/joint19/joint20/joint21
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_R
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_R/joint18 1
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_R/joint18 1/joint19 1
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_R/joint18 1/joint19 1/joint20 1
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_R/joint18 1/joint19 1/joint20 1/joint21
+          1
+        weight: 1
+      - path: Root/SpineRoot/Spine1
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_L
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_L/FrontForearm_L
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_L/FrontForearm_L/FrontKnee_L
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_L/FrontForearm_L/FrontKnee_L/FrontFoot_L
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_L/FrontForearm_L/FrontKnee_L/FrontFoot_L/FrontToes_L
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_R
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_R/FrontForearm_R
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_R/FrontForearm_R/FrontKnee_R
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_R/FrontForearm_R/FrontKnee_R/FrontFoot_R
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_R/FrontForearm_R/FrontKnee_R/FrontFoot_R/FrontToes_R
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase/HeadBase
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase/HeadBase/LowerJawBase
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase/HeadBase/LowerJawBase/LowerJawTip
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase/HeadBase/UpperJawBase
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase/HeadBase/UpperJawBase/UpperJawTip
+        weight: 1
+      - path: Root/TailRoot
+        weight: 1
+      - path: Root/TailRoot/Tail1
+        weight: 1
+      - path: Root/TailRoot/Tail1/Tail2
+        weight: 1
+      - path: Root/TailRoot/Tail1/Tail2/Tail3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: daisyIdle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: PossumFriend
+        weight: 1
+      - path: PossumFriend/Daisy
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder1
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder2
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder3
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder4
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder5
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder6
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder7
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder8
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder9
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder10
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder11
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder12
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder13
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder14
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder15
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder16
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder17
+        weight: 1
+      - path: PossumFriend/Daisy/pCylinder18
+        weight: 1
+      - path: PossumFriend/Daisy/pSphere1
+        weight: 1
+      - path: PossumFriend/Opossum
+        weight: 1
+      - path: PossumFriend/Opossum/FaceDetails
+        weight: 1
+      - path: PossumFriend/Opossum/FaceDetails/Eyeball_L
+        weight: 1
+      - path: PossumFriend/Opossum/FaceDetails/Eyeball_R
+        weight: 1
+      - path: PossumFriend/Opossum/FaceDetails/PossumEar_L
+        weight: 1
+      - path: PossumFriend/Opossum/FaceDetails/PossumEar_R
+        weight: 1
+      - path: PossumFriend/Opossum/OpossumBody
+        weight: 1
+      - path: PossumFriend/PossumTail
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/SpineRoot
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_L
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_L/joint18
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_L/joint18/joint19
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_L/joint18/joint19/joint20
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_L/joint18/joint19/joint20/joint21
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_R
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_R/joint18 1
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_R/joint18 1/joint19 1
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_R/joint18 1/joint19 1/joint20 1
+        weight: 1
+      - path: Root/SpineRoot/BackShoulder_R/joint18 1/joint19 1/joint20 1/joint21
+          1
+        weight: 1
+      - path: Root/SpineRoot/Spine1
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_L
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_L/FrontForearm_L
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_L/FrontForearm_L/FrontKnee_L
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_L/FrontForearm_L/FrontKnee_L/FrontFoot_L
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_L/FrontForearm_L/FrontKnee_L/FrontFoot_L/FrontToes_L
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_R
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_R/FrontForearm_R
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_R/FrontForearm_R/FrontKnee_R
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_R/FrontForearm_R/FrontKnee_R/FrontFoot_R
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/FrontShoulder_R/FrontForearm_R/FrontKnee_R/FrontFoot_R/FrontToes_R
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase/HeadBase
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase/HeadBase/LowerJawBase
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase/HeadBase/LowerJawBase/LowerJawTip
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase/HeadBase/UpperJawBase
+        weight: 1
+      - path: Root/SpineRoot/Spine1/Spine2/Spine3/NeckBase/HeadBase/UpperJawBase/UpperJawTip
+        weight: 1
+      - path: Root/TailRoot
+        weight: 1
+      - path: Root/TailRoot/Tail1
+        weight: 1
+      - path: Root/TailRoot/Tail1/Tail2
+        weight: 1
+      - path: Root/TailRoot/Tail1/Tail2/Tail3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 200
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
