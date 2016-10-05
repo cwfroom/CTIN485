@@ -65,7 +65,14 @@ public class GameManager : MonoBehaviour {
 
     public void SelectUnit(UnitProperty unit)
     {
-        m_SelectedUnit = unit;
+        if (m_SelectedUnit != null) {
+            m_SelectedUnit.SetSelected(false);
+        }
+
+        if (unit != null) {
+            m_SelectedUnit = unit;
+            m_SelectedUnit.SetSelected(true);
+        }
     }
 
     public void SetUnitInteractibleTarget(UnitInteractible interactible)
