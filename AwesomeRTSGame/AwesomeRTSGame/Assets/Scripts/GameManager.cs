@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public Transform m_EnemySpawningPoint;
     private int[] m_Coin;
     public Text m_CoinText;
+    public const int playerTeam = 0;
     
 	// Use this for initialization
 	void Start () {
@@ -69,8 +70,8 @@ public class GameManager : MonoBehaviour {
             m_SelectedUnit.SetSelected(false);
         }
 
+        m_SelectedUnit = unit;
         if (unit != null) {
-            m_SelectedUnit = unit;
             m_SelectedUnit.SetSelected(true);
         }
     }
@@ -91,16 +92,17 @@ public class GameManager : MonoBehaviour {
     
     public void AttackUnit(UnitProperty unit)
     {
-        if (unit.m_Team != m_SelectedUnit.m_Team) {
-            unit.TakeAttack(m_SelectedUnit);
+        if(m_SelectedUnit != null && unit != null) {
+            if (unit.m_Team != m_SelectedUnit.m_Team) {
+                unit.TakeAttack(m_SelectedUnit);
+            }
         }
     }
 
     public void AddCoin(int value, int team)
     {
         m_Coin[team] += value;
-        if (team == 0)
-        {
+        if (team == 0) {
             m_CoinText.text = "Coin: " + m_Coin[0];
         }
 

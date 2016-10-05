@@ -17,12 +17,11 @@ public class MouseSelection : MonoBehaviour
             RaycastHit hitInfo = new RaycastHit();
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
             if (hit) {
-                //Debug.Log("Hit " + hitInfo.transform.gameObject.name);
-                if (hitInfo.transform.GetComponent<UnitProperty>()) {
-                    m_Gmr.SelectUnit(hitInfo.transform.GetComponent<UnitProperty>());
+                UnitProperty hitUnit = hitInfo.transform.GetComponent<UnitProperty>();
+                if (hitUnit != null && hitUnit.m_Team == GameManager.playerTeam) {
+                    m_Gmr.SelectUnit(hitUnit);
                 }
                 else {
-                    //m_Gmr.SpawnUnit(new Vector3(Input.mousePosition.x, Input.mousePosition.y, m_CameraDepth));
                     m_Gmr.SelectUnit(null);
                 }
             }
