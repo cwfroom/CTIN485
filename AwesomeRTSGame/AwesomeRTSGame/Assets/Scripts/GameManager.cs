@@ -42,28 +42,28 @@ public class GameManager : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
-	void Update () {
-
-	}
-    
     public void SelectUnit(UnitProperty unit)
     {
-            m_SelectedUnit = unit;
+        m_SelectedUnit = unit;
+    }
+
+    public void SetUnitInteractibleTarget(UnitInteractible interactible)
+    {
+        if (m_SelectedUnit) {
+            m_SelectedUnit.SetInteractibleTarget(interactible);
+        }
     }
 
     public void MoveUnit(Vector3 position)
     {
-        if (m_SelectedUnit)
-        {
-            m_SelectedUnit.SetTarget(position);
+        if (m_SelectedUnit) {
+            m_SelectedUnit.SetPositionTarget(position);
         }
     }
     
     public void AttackUnit(UnitProperty unit)
     {
-        if (unit.m_Team != m_SelectedUnit.m_Team)
-        {
+        if (unit.m_Team != m_SelectedUnit.m_Team) {
             unit.TakeAttack(m_SelectedUnit);
         }
     }

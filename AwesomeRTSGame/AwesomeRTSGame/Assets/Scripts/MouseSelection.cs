@@ -34,7 +34,11 @@ public class MouseSelection : MonoBehaviour
             RaycastHit hitInfo = new RaycastHit();
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
             if (hit) {
-                if (hitInfo.transform.GetComponent<UnitProperty>()) {
+                UnitInteractible interactible = hitInfo.transform.gameObject.GetComponent<UnitInteractible>();
+                if (interactible != null) {
+                    m_Gmr.SetUnitInteractibleTarget(interactible);
+                }
+                else if (hitInfo.transform.GetComponent<UnitProperty>()) {
                     m_Gmr.AttackUnit(hitInfo.transform.GetComponent<UnitProperty>());
                 }
                 else {
@@ -43,5 +47,4 @@ public class MouseSelection : MonoBehaviour
             }
         }
     }
-
 }

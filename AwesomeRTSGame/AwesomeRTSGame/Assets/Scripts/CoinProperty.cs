@@ -1,18 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CoinProperty : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+public class CoinProperty : UnitInteractible
+{
     public static CoinProperty Create(GameManager gmr, Vector3 initialPos)
     {
         GameObject nUnit = Instantiate(Resources.Load("Prefabs/Coin")) as GameObject;
@@ -20,5 +10,10 @@ public class CoinProperty : MonoBehaviour {
 
         CoinProperty nCP = nUnit.GetComponent<CoinProperty>();     
         return nCP;
+    }
+
+    public override void UnitInteract(UnitProperty interactingUnit)
+    {
+        Destroy(this.gameObject);
     }
 }
