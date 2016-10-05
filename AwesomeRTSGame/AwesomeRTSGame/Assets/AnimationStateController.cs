@@ -17,7 +17,6 @@ public class AnimationStateController : MonoBehaviour {
 	
 	void Start () {
         currentAnimationState = AnimationState.Idle;
-        mAnimator = GetComponent<Animator>();
         AnimationState temp = AnimationState.Idle;
         UpdateAnimationState(temp);
 	}

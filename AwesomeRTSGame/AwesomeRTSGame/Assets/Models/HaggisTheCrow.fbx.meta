@@ -1,0 +1,685 @@
+fileFormatVersion: 2
+guid: 6462273279d0f444890f7f235fe01dfb
+timeCreated: 1475027572
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Beak1
+    100002: Bicep_L
+    100004: Bicep_R
+    100006: Body
+    100008: BottomBeak
+    100010: Butt_L
+    100012: Butt_R
+    100014: Chest
+    100016: Eyes
+    100018: Foot_L
+    100020: Foot_R
+    100022: Forearm_L
+    100024: Forearm_R
+    100026: HaggisMoveables
+    100028: HaggisTheCrow
+    100030: //RootNode
+    100032: Hand_L
+    100034: Hand_R
+    100036: Head
+    100038: HeadBase
+    100040: Heel_L
+    100042: Heel_R
+    100044: HipsBase
+    100046: Knee_L
+    100048: Knee_R
+    100050: L_Eye
+    100052: L_Leg
+    100054: Legs
+    100056: LowerBeakBase
+    100058: LowerNeck
+    100060: MiddleFing_L
+    100062: MiddleFing_R
+    100064: MIddleFingTip_L
+    100066: MIddleFingTip_R
+    100068: MidMiddleFing_L
+    100070: MidMiddleFing_R
+    100072: MidPinkie_L
+    100074: MidPinkie_R
+    100076: MidThumb_L
+    100078: MidThumb_R
+    100080: Pinkie_L
+    100082: Pinkie_R
+    100084: PinkieTip_L
+    100086: PinkieTip_R
+    100088: R_Eye
+    100090: R_Leg
+    100092: Root
+    100094: Shoulder_L
+    100096: Shoulder_R
+    100098: Spine1
+    100100: Spine2
+    100102: Spine3
+    100104: SpineBase
+    100106: Thigh_L
+    100108: Thigh_R
+    100110: Thumb_L
+    100112: Thumb_R
+    100114: ThumbTip_L
+    100116: ThumbTip_R
+    100118: Toes_L
+    100120: Toes_R
+    100122: TopBeak
+    100124: transform1
+    100126: UpperBeakBase
+    400000: Beak1
+    400002: Bicep_L
+    400004: Bicep_R
+    400006: Body
+    400008: BottomBeak
+    400010: Butt_L
+    400012: Butt_R
+    400014: Chest
+    400016: Eyes
+    400018: Foot_L
+    400020: Foot_R
+    400022: Forearm_L
+    400024: Forearm_R
+    400026: HaggisMoveables
+    400028: //RootNode
+    400030: HaggisTheCrow
+    400032: Hand_L
+    400034: Hand_R
+    400036: Head
+    400038: HeadBase
+    400040: Heel_L
+    400042: Heel_R
+    400044: HipsBase
+    400046: Knee_L
+    400048: Knee_R
+    400050: L_Eye
+    400052: L_Leg
+    400054: Legs
+    400056: LowerBeakBase
+    400058: LowerNeck
+    400060: MiddleFing_L
+    400062: MiddleFing_R
+    400064: MIddleFingTip_L
+    400066: MIddleFingTip_R
+    400068: MidMiddleFing_L
+    400070: MidMiddleFing_R
+    400072: MidPinkie_L
+    400074: MidPinkie_R
+    400076: MidThumb_L
+    400078: MidThumb_R
+    400080: Pinkie_L
+    400082: Pinkie_R
+    400084: PinkieTip_L
+    400086: PinkieTip_R
+    400088: R_Eye
+    400090: R_Leg
+    400092: Root
+    400094: Shoulder_L
+    400096: Shoulder_R
+    400098: Spine1
+    400100: Spine2
+    400102: Spine3
+    400104: SpineBase
+    400106: Thigh_L
+    400108: Thigh_R
+    400110: Thumb_L
+    400112: Thumb_R
+    400114: ThumbTip_L
+    400116: ThumbTip_R
+    400118: Toes_L
+    400120: Toes_R
+    400122: TopBeak
+    400124: transform1
+    400126: UpperBeakBase
+    4300000: L_Leg
+    4300002: R_Leg
+    4300004: R_Eye
+    4300006: L_Eye
+    4300008: BottomBeak
+    4300010: TopBeak
+    4300012: Body
+    7400000: Idle
+    7400002: Walk
+    7400004: Run
+    9500000: //RootNode
+    13700000: Body
+    13700002: BottomBeak
+    13700004: L_Eye
+    13700006: L_Leg
+    13700008: R_Eye
+    13700010: R_Leg
+    13700012: TopBeak
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 13
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HaggisTheCrow
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Beak1
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Beak1/BottomBeak
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Beak1/TopBeak
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Body
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Eyes
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Eyes/L_Eye
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Eyes/R_Eye
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs/L_Leg
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs/R_Leg
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs/transform1
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/HipsBase
+        weight: 1
+      - path: Root/HipsBase/Butt_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L/Heel_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L/Heel_L/Foot_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L/Heel_L/Foot_L/Toes_L
+        weight: 1
+      - path: Root/HipsBase/Butt_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R/Heel_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R/Heel_R/Foot_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R/Heel_R/Foot_R/Toes_R
+        weight: 1
+      - path: Root/SpineBase
+        weight: 1
+      - path: Root/SpineBase/Spine1
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase/Head
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase/Head/LowerBeakBase
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase/Head/UpperBeakBase
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/MiddleFing_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/MiddleFing_L/MidMiddleFing_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/MiddleFing_L/MidMiddleFing_L/MIddleFingTip_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Pinkie_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Pinkie_L/MidPinkie_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Pinkie_L/MidPinkie_L/PinkieTip_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Thumb_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Thumb_L/MidThumb_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Thumb_L/MidThumb_L/ThumbTip_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/MiddleFing_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/MiddleFing_R/MidMiddleFing_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/MiddleFing_R/MidMiddleFing_R/MIddleFingTip_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Pinkie_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Pinkie_R/MidPinkie_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Pinkie_R/MidPinkie_R/PinkieTip_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Thumb_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Thumb_R/MidThumb_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Thumb_R/MidThumb_R/ThumbTip_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 24
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HaggisTheCrow
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Beak1
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Beak1/BottomBeak
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Beak1/TopBeak
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Body
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Eyes
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Eyes/L_Eye
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Eyes/R_Eye
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs/L_Leg
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs/R_Leg
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs/transform1
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/HipsBase
+        weight: 1
+      - path: Root/HipsBase/Butt_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L/Heel_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L/Heel_L/Foot_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L/Heel_L/Foot_L/Toes_L
+        weight: 1
+      - path: Root/HipsBase/Butt_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R/Heel_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R/Heel_R/Foot_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R/Heel_R/Foot_R/Toes_R
+        weight: 1
+      - path: Root/SpineBase
+        weight: 1
+      - path: Root/SpineBase/Spine1
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase/Head
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase/Head/LowerBeakBase
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase/Head/UpperBeakBase
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/MiddleFing_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/MiddleFing_L/MidMiddleFing_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/MiddleFing_L/MidMiddleFing_L/MIddleFingTip_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Pinkie_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Pinkie_L/MidPinkie_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Pinkie_L/MidPinkie_L/PinkieTip_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Thumb_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Thumb_L/MidThumb_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Thumb_L/MidThumb_L/ThumbTip_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/MiddleFing_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/MiddleFing_R/MidMiddleFing_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/MiddleFing_R/MidMiddleFing_R/MIddleFingTip_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Pinkie_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Pinkie_R/MidPinkie_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Pinkie_R/MidPinkie_R/PinkieTip_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Thumb_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Thumb_R/MidThumb_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Thumb_R/MidThumb_R/ThumbTip_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 24
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HaggisTheCrow
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Beak1
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Beak1/BottomBeak
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Beak1/TopBeak
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Body
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Eyes
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Eyes/L_Eye
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Eyes/R_Eye
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs/L_Leg
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs/R_Leg
+        weight: 1
+      - path: HaggisTheCrow/HaggisMoveables/Legs/transform1
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/HipsBase
+        weight: 1
+      - path: Root/HipsBase/Butt_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L/Heel_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L/Heel_L/Foot_L
+        weight: 1
+      - path: Root/HipsBase/Butt_L/Thigh_L/Knee_L/Heel_L/Foot_L/Toes_L
+        weight: 1
+      - path: Root/HipsBase/Butt_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R/Heel_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R/Heel_R/Foot_R
+        weight: 1
+      - path: Root/HipsBase/Butt_R/Thigh_R/Knee_R/Heel_R/Foot_R/Toes_R
+        weight: 1
+      - path: Root/SpineBase
+        weight: 1
+      - path: Root/SpineBase/Spine1
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase/Head
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase/Head/LowerBeakBase
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/LowerNeck/HeadBase/Head/UpperBeakBase
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/MiddleFing_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/MiddleFing_L/MidMiddleFing_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/MiddleFing_L/MidMiddleFing_L/MIddleFingTip_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Pinkie_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Pinkie_L/MidPinkie_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Pinkie_L/MidPinkie_L/PinkieTip_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Thumb_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Thumb_L/MidThumb_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Thumb_L/MidThumb_L/ThumbTip_L
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/MiddleFing_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/MiddleFing_R/MidMiddleFing_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/MiddleFing_R/MidMiddleFing_R/MIddleFingTip_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Pinkie_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Pinkie_R/MidPinkie_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Pinkie_R/MidPinkie_R/PinkieTip_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Thumb_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Thumb_R/MidThumb_R
+        weight: 1
+      - path: Root/SpineBase/Spine1/Spine2/Spine3/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Thumb_R/MidThumb_R/ThumbTip_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -11,8 +11,8 @@ public class UnitProperty : MonoBehaviour {
 
     private AnimationStateController m_AnimationStateController;
 
-    // Use this for initialization
-    void Start () {
+    void Start () 
+    {
         m_NavAgent = GetComponent<NavMeshAgent>();
         m_Target = transform.position;
         m_AnimationStateController = GetComponentInChildren<AnimationStateController>();
@@ -39,7 +39,6 @@ public class UnitProperty : MonoBehaviour {
 
     public void SetTarget(Vector3 target)
     {
-        Debug.Log(target);
         m_Target = target;
         m_AnimationStateController.UpdateAnimationState(AnimationState.Walking);
     }
