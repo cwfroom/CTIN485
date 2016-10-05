@@ -3,6 +3,14 @@ using System.Collections;
 
 public class CoinProperty : UnitInteractible
 {
+    public int m_Timeout = 5;
+
+    void Start()
+    {
+        StartCoroutine(TimeoutDestroy());
+    }
+
+
     public static CoinProperty Create(GameManager gmr, Vector3 initialPos)
     {
         GameObject nUnit = Instantiate(Resources.Load("Prefabs/Coin")) as GameObject;
@@ -16,4 +24,12 @@ public class CoinProperty : UnitInteractible
     {
         Destroy(this.gameObject);
     }
+
+    IEnumerator TimeoutDestroy()
+    {
+        yield return new WaitForSeconds(m_Timeout);
+        Destroy(this.gameObject);
+    }
+
+
 }
