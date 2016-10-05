@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
@@ -13,12 +14,13 @@ public class GameManager : MonoBehaviour {
     public Transform m_EnemySpawningPoint;
     private int[] m_Coin;
     public Text m_CoinText;
-    
+
+    private string[] m_UnitTypes;
+
 	// Use this for initialization
 	void Start () {
-        m_Coin = new int[2];
-        m_Coin[0] = 0;
-        m_Coin[1] = 0;
+        m_Coin = new int[2] { 0, 0 };
+        m_UnitTypes = new string[2] { "Bot", "OpossumUnit" };
         StartCoroutine(SpawnWaves());
 	}
 
@@ -49,18 +51,16 @@ public class GameManager : MonoBehaviour {
         }
     }
 	
-    public void SpawnUnit(string type, int team)
+    public void SpawnUnit(int type, int team)
     {
         if (team == 0)
         {
-            UnitProperty.Create(this, type, m_PlayerSpawningPoint.position, 0);
+            UnitProperty.Create(this, m_UnitTypes[type], m_PlayerSpawningPoint.position, 0);
         }else
         {
-            UnitProperty.Create(this, type, m_EnemySpawningPoint.position, 1);
+            UnitProperty.Create(this, m_UnitTypes[type], m_EnemySpawningPoint.position, 1);
         }
-
-
-
+        
     }
 
     public void SelectUnit(UnitProperty unit)
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour {
     
     public void AttackUnit(UnitProperty unit)
     {
-        if (unit.m_Team != m_SelectedUnit.m_Team) {
+        if (unit && unit.m_Team != m_SelectedUnit.m_Team) {
             unit.TakeAttack(m_SelectedUnit);
         }
     }

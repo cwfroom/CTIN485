@@ -12,4 +12,14 @@ public class UIButtons : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void SpawnRobot()
+    {
+        FindObjectOfType<GameManager>().SpawnUnit(0, 0);
+    }
+
+    public void SpawnOpossum()
+    {
+        FindObjectOfType<GameManager>().SpawnUnit(1, 0);
+    }
 }

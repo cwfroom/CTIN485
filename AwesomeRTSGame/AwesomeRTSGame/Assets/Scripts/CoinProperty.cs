@@ -4,6 +4,7 @@ using System.Collections;
 public class CoinProperty : UnitInteractible
 {
     public int m_Timeout = 5;
+    public GameManager m_Gmr;
 
     void Start()
     {
@@ -13,15 +14,17 @@ public class CoinProperty : UnitInteractible
 
     public static CoinProperty Create(GameManager gmr, Vector3 initialPos)
     {
-        GameObject nUnit = Instantiate(Resources.Load("Prefabs/Coin")) as GameObject;
-        nUnit.transform.position = initialPos;
+        GameObject nCoin = Instantiate(Resources.Load("Prefabs/Coin")) as GameObject;
+        nCoin.transform.position = initialPos;
 
-        CoinProperty nCP = nUnit.GetComponent<CoinProperty>();     
+        CoinProperty nCP = nCoin.GetComponent<CoinProperty>();
+        nCP.m_Gmr = gmr;
         return nCP;
     }
 
     public override void UnitInteract(UnitProperty interactingUnit)
     {
+        m_Gmr.AddCoin(1, interactingUnit.m_Team);
         Destroy(this.gameObject);
     }
 
@@ -29,6 +32,15 @@ public class CoinProperty : UnitInteractible
     {
         yield return new WaitForSeconds(m_Timeout);
         Destroy(this.gameObject);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+       if (collision.transform.GetComponentInChildren<UnitProperty>())
+        {
+            m_Gmr.AddCoin(1, collision.transform.GetComponentInChildren<UnitProperty>().m_Team);
+            Destroy(this.gameObject);
+        }
     }
 
 
