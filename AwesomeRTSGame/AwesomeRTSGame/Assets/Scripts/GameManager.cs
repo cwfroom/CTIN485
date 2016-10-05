@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     private UnitProperty m_SelectedUnit;
@@ -8,10 +9,16 @@ public class GameManager : MonoBehaviour {
 
     public Transform m_LeftLowerCorner;
     public Transform m_RightUpperCorner;
-
-
+    public Transform m_PlayerSpawningPoint;
+    public Transform m_EnemySpawningPoint;
+    private int[] m_Coin;
+    public Text m_CoinText;
+    
 	// Use this for initialization
 	void Start () {
+        m_Coin = new int[2];
+        m_Coin[0] = 0;
+        m_Coin[1] = 0;
         StartCoroutine(SpawnWaves());
 	}
 
@@ -20,7 +27,7 @@ public class GameManager : MonoBehaviour {
         Vector3 pos = new Vector3(Random.Range(m_LeftLowerCorner.position.x, m_RightUpperCorner.position.x),
                                     0.5f,
                                     Random.Range(m_LeftLowerCorner.position.y, m_RightUpperCorner.position.y));
-        Collider[] hitColliders = Physics.OverlapSphere(pos, 3.0f);
+        //Collider[] hitColliders = Physics.OverlapSphere(pos, 3.0f);
         /*
         if (hitColliders.Length != 0)
         {
@@ -42,6 +49,20 @@ public class GameManager : MonoBehaviour {
         }
     }
 	
+    public void SpawnUnit(string type, int team)
+    {
+        if (team == 0)
+        {
+            UnitProperty.Create(this, type, m_PlayerSpawningPoint.position, 0);
+        }else
+        {
+            UnitProperty.Create(this, type, m_EnemySpawningPoint.position, 1);
+        }
+
+
+
+    }
+
     public void SelectUnit(UnitProperty unit)
     {
         m_SelectedUnit = unit;
@@ -66,5 +87,15 @@ public class GameManager : MonoBehaviour {
         if (unit.m_Team != m_SelectedUnit.m_Team) {
             unit.TakeAttack(m_SelectedUnit);
         }
+    }
+
+    public void AddCoin(int value, int team)
+    {
+        m_Coin[team] += value;
+        if (team == 0)
+        {
+            m_CoinText.text = "Coin: " + m_Coin[0];
+        }
+
     }
 }
