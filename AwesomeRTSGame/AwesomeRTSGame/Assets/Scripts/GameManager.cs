@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public Transform m_PlayerSpawningPoint;
     public Transform m_EnemySpawningPoint;
     private int[] m_Coin;
+    private int[] m_Cost;
     public Text m_CoinText;
     public const int playerTeam = 0;
     
@@ -21,8 +22,9 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        m_Coin = new int[2] { 0, 0 };
-        m_UnitTypes = new string[2] { "Bot", "OpossumUnit" };
+        m_Coin = new int[2] { 1, 1 };
+        m_Cost = new int[3] { 1, 2, 5 };
+         m_UnitTypes = new string[2] { "Bot", "OpossumUnit" };
         StartCoroutine(SpawnWaves());
 	}
 
@@ -55,14 +57,25 @@ public class GameManager : MonoBehaviour {
 	
     public void SpawnUnit(int type, int team)
     {
-        if (team == 0)
+        if (m_Coin[team] >= m_Cost[type])
         {
-            UnitProperty.Create(this, m_UnitTypes[type], m_PlayerSpawningPoint.position, 0);
-        }else
-        {
-            UnitProperty.Create(this, m_UnitTypes[type], m_EnemySpawningPoint.position, 1);
+            AddCoin(-m_Cost[type], team);
+            if (team == 0)
+            {
+                UnitProperty.Create(this, m_UnitTypes[type], m_PlayerSpawningPoint.position, 0);
+            }
+            else
+            {
+                UnitProperty.Create(this, m_UnitTypes[type], m_EnemySpawningPoint.position, 1);
+            }
         }
         
+    }
+
+    public void SpawnUnit(int type, int team, int cost)
+    {
+        SpawnUnit(type, team);
+        m_Coin[team] -= cost;
     }
 
     public void SelectUnit(UnitProperty unit)
