@@ -39,8 +39,10 @@ public class MouseSelection : MonoBehaviour
                 }
                 else if (hitInfo.transform.GetComponent<UnitProperty>()) {
                     m_Gmr.AttackUnit(hitInfo.transform.GetComponent<UnitProperty>());
-                }
-                else {
+                }else if (hitInfo.transform.GetComponent<BaseProperty>())
+                {
+                    m_Gmr.AttackBase(hitInfo.transform.GetComponent<BaseProperty>());
+                }else {
                     m_Gmr.MoveUnit(hitInfo.point);
                 }
             }

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     private int[] m_Coin;
     private int[] m_Cost;
     public Text m_CoinText;
+    public Text m_EndGameText;
     public const int playerTeam = 0;
     
 
@@ -111,6 +112,14 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void AttackBase(BaseProperty mbase)
+    {
+        if (mbase.m_Team != m_SelectedUnit.m_Team)
+        {
+            mbase.TakeDamage(m_SelectedUnit.m_AttackPower);
+        }
+    }
+
     public void AddCoin(int value, int team)
     {
         m_Coin[team] += value;
@@ -118,5 +127,15 @@ public class GameManager : MonoBehaviour {
             m_CoinText.text = "Coin: " + m_Coin[0];
         }
 
+    }
+    public void EndGame(int losingTeam)
+    {
+        if (losingTeam == 1)
+        {
+            m_EndGameText.text = "You are victorious";
+        }else
+        {
+            m_EndGameText.text = "You are defeated";
+        }
     }
 }

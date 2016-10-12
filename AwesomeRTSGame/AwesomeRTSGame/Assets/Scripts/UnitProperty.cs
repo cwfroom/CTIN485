@@ -6,6 +6,7 @@ using System.Linq;
 public class UnitProperty : MonoBehaviour {
     public int m_Team;
     public int m_Health = 100;
+    public int m_AttackPower = 20;
     public int m_AttackRange = 5;
 
     [SerializeField] private Material   m_outlineMaterial;
