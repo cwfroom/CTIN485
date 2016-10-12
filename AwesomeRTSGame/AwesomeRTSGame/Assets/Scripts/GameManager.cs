@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public Transform m_RightUpperCorner;
     public Transform m_PlayerSpawningPoint;
     public Transform m_EnemySpawningPoint;
-    private int[] m_Coin;
+    public int[] m_Coin;
     private int[] m_Cost;
     public Text m_CoinText;
     public Text m_EndGameText;
@@ -56,20 +56,21 @@ public class GameManager : MonoBehaviour {
         }
     }
 	
-    public void SpawnUnit(int type, int team)
+    public UnitProperty SpawnUnit(int type, int team)
     {
         if (m_Coin[team] >= m_Cost[type])
         {
             AddCoin(-m_Cost[type], team);
             if (team == 0)
             {
-                UnitProperty.Create(this, m_UnitTypes[type], m_PlayerSpawningPoint.position, 0);
+                return UnitProperty.Create(this, m_UnitTypes[type], m_PlayerSpawningPoint.position, 0);
             }
             else
             {
-                UnitProperty.Create(this, m_UnitTypes[type], m_EnemySpawningPoint.position, 1);
+                return UnitProperty.Create(this, m_UnitTypes[type], m_EnemySpawningPoint.position, 1);
             }
         }
+        return null;
         
     }
 
