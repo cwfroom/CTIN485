@@ -5,10 +5,12 @@ using System.Collections.Generic;
 public class EnemyAI : MonoBehaviour {
     private GameManager m_Gmr;
     private List<UnitProperty> m_units;
-    
+    private bool bhasUnitCollectCoin;
+
 	// Use this for initialization
 	void Start () {
         m_Gmr = GetComponent<GameManager>();
+        m_units = new List<UnitProperty>();
 	}
 	
 	// Update is called once per frame
@@ -19,10 +21,29 @@ public class EnemyAI : MonoBehaviour {
         }
         if (FindCoin())
         {
-            foreach (UnitProperty unit in m_units)
+            m_units[0].SetPositionTarget(FindCoin().transform.position);
+
+            if (m_units.Count > 1)
             {
-                unit.SetPositionTarget(FindCoin().transform.position);
+                float dist = Vector3.Distance(m_units[0].transform.position, FindCoin().transform.position);
+
+                int index = 0;
+                for (int i=1; i < m_units.Count; i++)
+                { 
+                    if (Vector3.Distance(m_units[i].transform.position, FindCoin().transform.position) < dist)
+                    {
+                        dist = Vector3.Distance(m_units[i].transform.position, FindCoin().transform.position);
+                        index = i;
+                    }
+                    
+                }
+                m_units[index].SetPositionTarget(FindCoin().transform.position);
+
+
+
             }
+
+
         }
 	}
 

@@ -82,6 +82,8 @@ public class UnitProperty : MonoBehaviour {
 	    else if (Vector3.Distance(transform.position, m_PositionalTarget) > 0.1f) {
             m_NavAgent.SetDestination(m_PositionalTarget);
         }
+
+        //Auto attack other untis
 	}
 
     public void SetPositionTarget(Vector3 posTargetIn)

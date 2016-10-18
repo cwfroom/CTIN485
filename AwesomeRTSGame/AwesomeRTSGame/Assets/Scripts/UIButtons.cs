@@ -22,4 +22,9 @@ public class UIButtons : MonoBehaviour {
     {
         FindObjectOfType<GameManager>().SpawnUnit(1, 0);
     }
+
+    public void SpawnCrow()
+    {
+        FindObjectOfType<GameManager>().SpawnUnit(2, 0);
+    }
 }
