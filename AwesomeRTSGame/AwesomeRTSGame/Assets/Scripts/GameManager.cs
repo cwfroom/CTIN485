@@ -23,9 +23,9 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        m_Coin = new int[2] { 1, 1 };
+        m_Coin = new int[2] { 3, 1 };
         m_Cost = new int[3] { 1, 2, 4 };
-         m_UnitTypes = new string[3] { "Bot", "OpossumUnit", "CrowUnit" };
+         m_UnitTypes = new string[3] { "OpossumUnit", "CrowUnit", "CrowUnit" };
         StartCoroutine(SpawnWaves());
 	}
 

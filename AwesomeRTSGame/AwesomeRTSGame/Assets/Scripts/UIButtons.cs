@@ -20,11 +20,11 @@ public class UIButtons : MonoBehaviour {
 
     public void SpawnOpossum()
     {
-        FindObjectOfType<GameManager>().SpawnUnit(1, 0);
+        FindObjectOfType<GameManager>().SpawnUnit(0, 0);
     }
 
     public void SpawnCrow()
     {
-        FindObjectOfType<GameManager>().SpawnUnit(2, 0);
+        FindObjectOfType<GameManager>().SpawnUnit(1, 0);
     }
 }

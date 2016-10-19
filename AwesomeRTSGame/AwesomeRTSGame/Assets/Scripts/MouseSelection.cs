@@ -37,14 +37,17 @@ public class MouseSelection : MonoBehaviour
                 if (interactible != null) {
                     m_Gmr.SetUnitInteractibleTarget(interactible);
                 }
+                m_Gmr.MoveUnit(hitInfo.point);
+
+                /*
                 else if (hitInfo.transform.GetComponent<UnitProperty>()) {
                     m_Gmr.AttackUnit(hitInfo.transform.GetComponent<UnitProperty>());
                 }else if (hitInfo.transform.GetComponent<BaseProperty>())
                 {
                     m_Gmr.AttackBase(hitInfo.transform.GetComponent<BaseProperty>());
                 }else {
-                    m_Gmr.MoveUnit(hitInfo.point);
-                }
+                  }
+                */
             }
         }
     }

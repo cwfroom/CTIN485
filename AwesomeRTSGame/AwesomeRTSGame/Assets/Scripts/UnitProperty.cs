@@ -83,8 +83,32 @@ public class UnitProperty : MonoBehaviour {
             m_NavAgent.SetDestination(m_PositionalTarget);
         }
 
-        //Auto attack other untis
-	}
+        //Auto attack other units
+        UnitProperty[] allUnits = FindObjectsOfType<UnitProperty>();
+        foreach (UnitProperty unit in allUnits){
+            if (Vector3.Distance(transform.position, unit.transform.position) < m_AttackRange)
+            {
+                if (unit != this && unit.m_Team != this.m_Team)
+                {
+                    unit.TakeAttack(this);
+                }       
+            }
+        }
+
+        BaseProperty[] allBases = FindObjectsOfType<BaseProperty>();
+        foreach (BaseProperty mbase in allBases)
+        {
+            if (Vector3.Distance(transform.position, mbase.transform.position) < m_AttackRange)
+            {
+                if (this.m_Team != mbase.m_Team)
+                {
+                    mbase.TakeDamage(this.m_AttackPower);
+                }
+            }
+        }
+
+
+    }
 
     public void SetPositionTarget(Vector3 posTargetIn)
     {
