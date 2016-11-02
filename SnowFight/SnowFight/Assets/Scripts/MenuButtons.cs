@@ -14,9 +14,9 @@ public class MenuButtons : MonoBehaviour {
 	
 	}
 
-    public void GotoGame()
+    public void GotoLobby()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Lobby");
     }
 
     public void QuitGame()
