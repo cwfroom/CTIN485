@@ -18,6 +18,7 @@ public class UnitProperty : MonoBehaviour {
     private AnimationStateController m_AnimationStateController;
     private Renderer[]      m_renderers;
 
+    private bool bCanAttack;
 
     void Start () 
     {
@@ -25,6 +26,19 @@ public class UnitProperty : MonoBehaviour {
         m_PositionalTarget = transform.position;
         m_AnimationStateController = GetComponentInChildren<AnimationStateController>();
         m_renderers = m_MeshPivot.GetComponentsInChildren<Renderer>();
+        bCanAttack = true;
+    }
+
+    private void StartCoolDown()
+    {
+        bCanAttack = false;
+        StartCoroutine(CoolDown());
+    }
+
+    IEnumerator CoolDown()
+    {
+        yield return new WaitForSeconds(0.5f);
+        bCanAttack = true;
     }
 
     public void SetSelected(bool selected)
@@ -90,7 +104,11 @@ public class UnitProperty : MonoBehaviour {
             {
                 if (unit != this && unit.m_Team != this.m_Team)
                 {
-                    unit.TakeAttack(this);
+                    if (bCanAttack)
+                    {
+                        unit.TakeAttack(this);
+                        StartCoolDown();
+                    }
                 }       
             }
         }
@@ -102,7 +120,11 @@ public class UnitProperty : MonoBehaviour {
             {
                 if (this.m_Team != mbase.m_Team)
                 {
-                    mbase.TakeDamage(this.m_AttackPower);
+                    if (bCanAttack)
+                    {
+                        mbase.TakeDamage(this.m_AttackPower);
+                        StartCoolDown();
+                    }
                 }
             }
         }
@@ -134,6 +156,7 @@ public class UnitProperty : MonoBehaviour {
     {
         m_Health -= damage;
         if (m_Health <= 0) {
+            GetComponent<AudioSource>().Play();
             Destroy(this.gameObject);
         }
     }

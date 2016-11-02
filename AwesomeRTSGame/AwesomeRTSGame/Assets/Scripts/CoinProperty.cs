@@ -35,9 +35,7 @@ public class CoinProperty : UnitInteractible
     }
 
     void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("collide");
-
+    { 
        if (collision.transform.GetComponentInChildren<UnitProperty>())
         {
             m_Gmr.AddCoin(1, collision.transform.GetComponentInChildren<UnitProperty>().m_Team);
