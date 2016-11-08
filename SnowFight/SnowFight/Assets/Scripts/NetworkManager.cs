@@ -80,6 +80,12 @@ public class NetworkManager : MonoBehaviour
         
     }
 
+    public void DisConnect()
+    {
+        clientReady = false;
+        client.Close();
+    }
+
     private void ParseMessage(string msg)
     {
         string[] results = msg.Split(':');
@@ -108,6 +114,10 @@ public class NetworkManager : MonoBehaviour
         gmr.LoadLevel();
     }
 
+    void OnApplicationQuit()
+    {
+        DisConnect();
+    }
 
-    
+
 }

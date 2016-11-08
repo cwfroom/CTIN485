@@ -77,7 +77,7 @@ namespace SFServer
                 Console.Write("Connection from " + client_socket.Client.RemoteEndPoint.ToString() + "\n");
 
                 client_count++;
-                if (client_count == 1)
+                if (client_count >= 1)
                 {
                     StartSession();
                     //client_count++;        
