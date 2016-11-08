@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
+
 
 public class MenuButtons : MonoBehaviour {
 
@@ -16,7 +16,7 @@ public class MenuButtons : MonoBehaviour {
 
     public void GotoLobby()
     {
-        SceneManager.LoadScene("Lobby");
+        FindObjectOfType<GameManager>().LoadLobby();
     }
 
     public void QuitGame()

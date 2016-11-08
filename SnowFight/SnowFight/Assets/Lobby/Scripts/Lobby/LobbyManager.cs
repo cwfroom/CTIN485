@@ -323,18 +323,18 @@ namespace Prototype.NetworkLobby
             }
 
         }
-
+        /*
         public override bool OnLobbyServerSceneLoadedForPlayer(GameObject lobbyPlayer, GameObject gamePlayer)
         {
             //This hook allows you to apply state data from the lobby-player to the game-player
             //just subclass "LobbyHook" and add it to the lobby object.
 
             if (_lobbyHooks)
-                _lobbyHooks.OnLobbyServerSceneLoadedForPlayer(this, lobbyPlayer, gamePlayer);
+                //_lobbyHooks.OnLobbyServerSceneLoadedForPlayer(this, lobbyPlayer, gamePlayer);
 
             return true;
         }
-
+        */
         // --- Countdown management
 
         public override void OnLobbyServerPlayersReady()
