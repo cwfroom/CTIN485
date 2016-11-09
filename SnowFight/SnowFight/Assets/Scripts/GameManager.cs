@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     NetworkManager nm;
     int PlayerID;
+    List<Vector3> SpawnPoints;
 
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(gameObject);
         nm = GetComponent<NetworkManager>();
+        SpawnPoints = new List<Vector3>();
     }
 	
 	// Update is called once per frame
@@ -33,5 +36,9 @@ public class GameManager : MonoBehaviour {
         PlayerID = id;
     }
 
+    public void AddSpawnPoint(Vector3 pos)
+    {
+        SpawnPoints.Add(pos);
+    }
 
 }
