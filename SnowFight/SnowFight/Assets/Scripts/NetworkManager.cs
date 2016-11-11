@@ -2,9 +2,11 @@
 using System.Collections;
 using System;
 using System.IO;
-using System.Net.Sockets;
 using System.Threading;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Net;
+using System.Net.Sockets;
 
 public class NetworkManager : MonoBehaviour
 {
@@ -12,12 +14,14 @@ public class NetworkManager : MonoBehaviour
 
     const string host = "127.0.0.1";
     const int port = 10086;
+    const int buffer_size = 1024;
 
     private bool clientReady = false;
-    private TcpClient client;
-    private NetworkStream stream;
-    private StreamWriter writer;
-    private StreamReader reader;
+
+    private Socket client_socket;
+    private byte[] buffer;
+
+    //AsyncCallback receiveAsyncCall;
 
     public readonly static Queue<Action> ExecuteOnMainThread = new Queue<Action>();
 
@@ -26,6 +30,7 @@ public class NetworkManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         gmr = GetComponent<GameManager>();
+  
     }
 
     // Update is called once per frame
@@ -38,31 +43,47 @@ public class NetworkManager : MonoBehaviour
         }
     }
 
-    public void Connect()
+    private static byte[] MessageSerialize(int type, string str, Vector3 vec)
     {
-        try
-        {
-            client = new TcpClient(host, port);
-            stream = client.GetStream();
-            writer = new StreamWriter(stream);
-            reader = new StreamReader(stream);
-            clientReady = true;
+        MemoryStream ms = new MemoryStream();
+        BinaryFormatter bf = new BinaryFormatter();
 
-            Thread ctThread = new Thread(Listen);
-            ctThread.Start();
+        bf.Serialize(ms, type);
 
-        }catch (Exception e)
+        switch (type)
         {
-            Debug.Log(e.ToString());
+            case 0:
+                bf.Serialize(ms, str);
+                break;
+            case 1:
+                bf.Serialize(ms, str);
+                bf.Serialize(ms, vec.x);
+                bf.Serialize(ms, vec.y);
+                bf.Serialize(ms, vec.z);
+                break;
         }
+
+        return ms.ToArray();
     }
 
-    public void Send(string str)
+    public void Connect()
+    {
+        client_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        //IPEndPoint remoteAddr = new IPEndPoint(IPAddress.Parse(host), port);
+        Debug.Log("Connecting to " + host + ":" + port);
+        client_socket.Connect(host,port);
+        buffer = new byte[buffer_size];
+        clientReady = true;
+
+
+        Listen();
+    }
+
+    public void Send(byte[] data)
     {
         if (clientReady)
         {
-            writer.Write(str + "\r\n");
-            writer.Flush();
+            client_socket.Send(data);
         }
     }
 
@@ -70,12 +91,8 @@ public class NetworkManager : MonoBehaviour
     {
         while (clientReady)
         {
-            if (stream.DataAvailable)
-            {
-                string msg = reader.ReadLine();
-                Debug.Log("Raw Message: " + msg + "\n");
-                ParseMessage(msg);
-            }
+            client_socket.Receive(buffer);
+            Debug.Log(buffer);
         }
         
     }
@@ -83,7 +100,12 @@ public class NetworkManager : MonoBehaviour
     public void DisConnect()
     {
         clientReady = false;
-        client.Close();
+        client_socket.Close();
+    }
+
+    private void OnReceiveMessage(IAsyncResult asyn)
+    {
+
     }
 
     private void ParseMessage(string msg)
