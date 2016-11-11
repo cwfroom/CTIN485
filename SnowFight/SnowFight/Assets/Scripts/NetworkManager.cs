@@ -66,6 +66,23 @@ public class NetworkManager : MonoBehaviour
         return ms.ToArray();
     }
 
+    private static Vector3 MessageDeserialize(byte[] msg, out string str)
+    {
+        MemoryStream ms = new MemoryStream(msg);
+        BinaryFormatter formatter = new BinaryFormatter();
+        int msgType = (int)formatter.Deserialize(ms);
+        str = (string)formatter.Deserialize(ms);
+        Vector3 vec = Vector3.zero;
+        if (msgType > 0)
+        {
+            vec.x = (float)formatter.Deserialize(ms);
+            vec.y = (float)formatter.Deserialize(ms);
+            vec.z = (float)formatter.Deserialize(ms);
+            return vec;
+        }
+        return vec;
+    }
+
     public void Connect()
     {
         client_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -75,8 +92,9 @@ public class NetworkManager : MonoBehaviour
         buffer = new byte[buffer_size];
         clientReady = true;
 
-
-        Listen();
+        Thread ctThread = new Thread(Listen);
+        ctThread.Start();
+        
     }
 
     public void Send(byte[] data)
@@ -92,7 +110,9 @@ public class NetworkManager : MonoBehaviour
         while (clientReady)
         {
             client_socket.Receive(buffer);
-            Debug.Log(buffer);
+            string msg;
+            MessageDeserialize(buffer, out msg);
+            Debug.Log(msg);
         }
         
     }
@@ -101,11 +121,6 @@ public class NetworkManager : MonoBehaviour
     {
         clientReady = false;
         client_socket.Close();
-    }
-
-    private void OnReceiveMessage(IAsyncResult asyn)
-    {
-
     }
 
     private void ParseMessage(string msg)
