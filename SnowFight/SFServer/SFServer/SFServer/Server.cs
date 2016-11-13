@@ -76,7 +76,7 @@ namespace SFServer
             Thread ctThread = new Thread(Listen);
             ctThread.Start();
 
-            Send(Serializer.MessageSerialize(0, "PID:" + pid, new Vector3()));
+            SendString("PID:" + pid);
         }
 
         public void Send(byte[] data)
@@ -96,6 +96,13 @@ namespace SFServer
             }
 
         }
+
+        public void SendString(string str)
+        {
+            Send(Serializer.MessageSerialize(0, str, new Vector3()));
+        }
+
+        
 
     }
 
