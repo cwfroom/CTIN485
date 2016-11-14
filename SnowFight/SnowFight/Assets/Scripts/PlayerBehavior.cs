@@ -13,7 +13,7 @@ public class PlayerBehavior : MonoBehaviour {
         if (gmr)
         {
             online = true;
-            gmr.SetPlayer(this);
+            transform.position = gmr.SpawnPoints[gmr.PlayerID];
         }
         pos = transform.position;
     }
@@ -22,7 +22,9 @@ public class PlayerBehavior : MonoBehaviour {
     void Update () {
         if (pos != transform.position)
         {
+            Debug.Log("Sending Pos");
 
+            gmr.SendPos(transform.position);
             pos = transform.position;
         }
 	}

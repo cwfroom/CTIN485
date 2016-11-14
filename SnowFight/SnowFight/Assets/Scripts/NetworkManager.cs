@@ -166,7 +166,7 @@ public class NetworkManager : MonoBehaviour
     {
         switch (msg) {
             case "POS":
-                gmr.ReceivePos(vec);
+                ExecuteOnMainThread.Enqueue(() => { StartCoroutine(ReceivePosMainThread(vec)); });
                 break;
             
         }
@@ -178,6 +178,12 @@ public class NetworkManager : MonoBehaviour
     {
         yield return null;
         gmr.LoadLevel();
+    }
+
+    IEnumerator ReceivePosMainThread(Vector3 vec)
+    {
+        yield return null;
+        gmr.ReceivePos(vec);
     }
 
     void OnApplicationQuit()

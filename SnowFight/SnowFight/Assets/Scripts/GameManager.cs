@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     NetworkManager nm;
-    int PlayerID;
-    List<Vector3> SpawnPoints;
-    PlayerBehavior player;
+    public int PlayerID;
+    public List<Vector3> SpawnPoints;
     GhostController ghost;
 
 	// Use this for initialization
@@ -31,21 +30,9 @@ public class GameManager : MonoBehaviour {
     public void LoadLevel()
     {
         SceneManager.LoadScene("Level");
-        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
     }
 
-    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
-    {
-        if (PlayerID == 0)
-        {
-            player.transform.position = SpawnPoints[0];
-            ghost.transform.position = SpawnPoints[1];
-        }else
-        {
-            player.transform.position = SpawnPoints[1];
-            ghost.transform.position = SpawnPoints[0];
-        }
-    }
+
 
     public void SetPID(int id)
     {
@@ -57,10 +44,6 @@ public class GameManager : MonoBehaviour {
         SpawnPoints.Add(pos);
     }
 
-    public void SetPlayer(PlayerBehavior p)
-    {
-        player = p;
-    }
 
     public void SetGhost(GhostController g)
     {

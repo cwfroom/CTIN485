@@ -3,13 +3,18 @@ using System.Collections;
 
 public class SpawnPointProperty : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    void Awake()
+    {
         GameManager gmr = FindObjectOfType<GameManager>();
         if (gmr)
         {
-
+            gmr.AddSpawnPoint(transform.position);
         }
+    }
+
+	// Use this for initialization
+	void Start () {
+        
 	}
 	
 	// Update is called once per frame
