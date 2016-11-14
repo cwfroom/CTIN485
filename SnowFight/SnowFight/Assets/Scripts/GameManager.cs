@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
     NetworkManager nm;
     int PlayerID;
     List<Vector3> SpawnPoints;
+    PlayerBehavior player;
+    GhostController ghost;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +31,20 @@ public class GameManager : MonoBehaviour {
     public void LoadLevel()
     {
         SceneManager.LoadScene("Level");
+        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+    }
+
+    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        if (PlayerID == 0)
+        {
+            player.transform.position = SpawnPoints[0];
+            ghost.transform.position = SpawnPoints[1];
+        }else
+        {
+            player.transform.position = SpawnPoints[1];
+            ghost.transform.position = SpawnPoints[0];
+        }
     }
 
     public void SetPID(int id)
@@ -40,5 +56,29 @@ public class GameManager : MonoBehaviour {
     {
         SpawnPoints.Add(pos);
     }
+
+    public void SetPlayer(PlayerBehavior p)
+    {
+        player = p;
+    }
+
+    public void SetGhost(GhostController g)
+    {
+        ghost = g;
+    }
+
+    public void SendPos(Vector3 vec)
+    {
+        nm.SendVector("POS:" + PlayerID, vec);
+    }
+
+    public void ReceivePos(Vector3 vec){
+        if (ghost)
+        {
+            ghost.transform.position = vec;
+        }
+    }
+
+    
 
 }

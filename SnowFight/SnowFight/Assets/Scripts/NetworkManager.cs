@@ -66,21 +66,23 @@ public class NetworkManager : MonoBehaviour
         return ms.ToArray();
     }
 
-    private static Vector3 MessageDeserialize(byte[] msg, out string str)
+    private static int MessageDeserialize(byte[] msg, out string str, out Vector3 vec)
     {
         MemoryStream ms = new MemoryStream(msg);
         BinaryFormatter formatter = new BinaryFormatter();
         int msgType = (int)formatter.Deserialize(ms);
         str = (string)formatter.Deserialize(ms);
-        Vector3 vec = Vector3.zero;
         if (msgType > 0)
         {
             vec.x = (float)formatter.Deserialize(ms);
             vec.y = (float)formatter.Deserialize(ms);
             vec.z = (float)formatter.Deserialize(ms);
-            return vec;
         }
-        return vec;
+        else
+        {
+            vec = Vector3.zero;
+        }
+        return msgType;
     }
 
     public void Connect()
@@ -111,11 +113,29 @@ public class NetworkManager : MonoBehaviour
         {
             client_socket.Receive(buffer);
             string msg;
-            MessageDeserialize(buffer, out msg);
-            Debug.Log(msg);
+            Vector3 vec;
+            int type = MessageDeserialize(buffer, out msg, out vec);
+            if (type == 0)
+            {
+                ParseMessage(msg);
+            }else
+            {
+                ParseMessage(msg, vec);
+            }
         }
         
     }
+
+    public void SendString(string str)
+    {
+        Send(MessageSerialize(0, str, new Vector3()));
+    }
+
+    public void SendVector(string str, Vector3 vec)
+    {
+        Send(MessageSerialize(1,str, vec));
+    }
+
 
     public void DisConnect()
     {
@@ -133,16 +153,25 @@ public class NetworkManager : MonoBehaviour
                 gmr.SetPID(Convert.ToInt32(value));
                 break;
             case "START":
-                ExecuteOnMainThread.Enqueue(() => { StartCoroutine(StartGameMainThread()); });
-
-               
+                ExecuteOnMainThread.Enqueue(() => { StartCoroutine(StartGameMainThread()); });       
                 break;
         }
-
-
+        
         Debug.Log(command);
         Debug.Log(value);
 
+    }
+
+    private void ParseMessage(string msg, Vector3 vec)
+    {
+        switch (msg) {
+            case "POS":
+                gmr.ReceivePos(vec);
+                break;
+            
+        }
+
+        
     }
 
     IEnumerator StartGameMainThread()
