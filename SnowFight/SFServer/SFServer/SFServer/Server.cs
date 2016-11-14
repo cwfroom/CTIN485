@@ -156,7 +156,7 @@ namespace SFServer
             {
                 clients = new List<ClientHandler>();
                 server_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                server_socket.Bind(new IPEndPoint(IPAddress.Loopback, port));
+                server_socket.Bind(new IPEndPoint(IPAddress.Any, port));
                 server_socket.Listen(10);
                 Console.Write("Starting listening at port " + port + "\n");
 

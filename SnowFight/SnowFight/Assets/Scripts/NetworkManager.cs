@@ -12,7 +12,8 @@ public class NetworkManager : MonoBehaviour
 {
     GameManager gmr;
 
-    const string host = "127.0.0.1";
+    //const string host = "127.0.0.1";
+    const string host = "104.236.7.195";
     const int port = 10086;
     const int buffer_size = 1024;
 
