@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     //NetworkManager nm;
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour {
     public int PlayerID;
     public List<Vector3> SpawnPoints;
     public GhostController ghost;
+	public Text[] hpText;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +18,8 @@ public class GameManager : MonoBehaviour {
         //nm = GetComponent<NetworkManager>();
         nm = GetComponent<PhotonNetworkManager>();
         SpawnPoints = new List<Vector3>();
-    }
+		hpText = new Text[2];
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -54,7 +57,17 @@ public class GameManager : MonoBehaviour {
         ghost = g;
     }
 
+	public void SetText(Text t, int id){
+		hpText [id] = t;
+	}
 
+	public void SendHealth(int h){
+		PhotonNetworkManager.ScenePhotonView.RPC("ReceiveHealth", PhotonTargets.Others, h);
+	}
+
+	[PunRPC] public void ReceiveHealth(int h){
+		hpText [0].text = "You: " + h;
+	}
     /*
     public void SendPos(Vector3 vec)
     {

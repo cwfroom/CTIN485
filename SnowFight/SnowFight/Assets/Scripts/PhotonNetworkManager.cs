@@ -47,9 +47,8 @@ public class PhotonNetworkManager : MonoBehaviour {
             }
             if (currentState == NetworkStates.Idle || currentState == NetworkStates.EndBattle)
             {
-                
-                //GetComponent<BackToScreen>().GoToMatchingRoom();
-            }
+               // gmr.LoadLobby();
+               }
             //join a random room
             currentState = NetworkStates.Room;
             GetComponent<Random_Matchmaker>().Connect();
@@ -74,6 +73,8 @@ public class PhotonNetworkManager : MonoBehaviour {
 
         if (PhotonNetwork.isMasterClient)
         {
+            Debug.Log(PhotonNetwork.playerList.Length);
+
             if (PhotonNetwork.playerList.Length >= 2)
             {
                 ScenePhotonView.RPC("LoadLevel", PhotonTargets.All);
