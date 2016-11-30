@@ -24,7 +24,8 @@ public class SelectObject : MonoBehaviour {
     Transform holder;
     Transform temp;
 
-	public float force = 500f;
+	public float pickThrowForce;
+	public float carryThrowForce;
     float timeTakenDuringLerp = 0.01f;
     float timeStartedLerping;
 
@@ -180,12 +181,17 @@ public class SelectObject : MonoBehaviour {
 			dir = Target.transform.position - transform.position;
 			dir = dir.normalized;
 
-			item.GetComponent<Rigidbody> ().AddForce (dir * force);	
+			item.GetComponent<Rigidbody> ().AddForce (dir * pickThrowForce);	
 
         }
         if (item.gameObject.tag == "Carryable")
         {
             CarryGesture.SetActive(false);
+
+			dir = Target.transform.position - transform.position;
+			dir = dir.normalized;
+
+			item.GetComponent<Rigidbody> ().AddForce (dir * carryThrowForce);	
         }
         item = null;
         lerpTo = false;
