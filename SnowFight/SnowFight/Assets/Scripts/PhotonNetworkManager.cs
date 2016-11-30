@@ -81,6 +81,18 @@ public class PhotonNetworkManager : MonoBehaviour {
         }
     }
 
+    public void SendPos(Vector3 vec, Quaternion rot)
+    {
+        ScenePhotonView.RPC("ReceivePos", PhotonTargets.Others, vec, rot);
+    }
+
+    [PunRPC]
+    public void ReceivePos(Vector3 vec, Quaternion rot)
+    {
+        gmr.ghost.transform.position = vec;
+        gmr.ghost.transform.rotation = rot;
+    }
+
 
 
 
