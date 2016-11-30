@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerBehavior : MonoBehaviour {
     GameManager gmr;
-    private bool online = false;
+    //private bool online = false;
 
     private Vector3 pos;
 
@@ -12,22 +12,21 @@ public class PlayerBehavior : MonoBehaviour {
         gmr = FindObjectOfType<GameManager>();
         if (gmr)
         {
-            online = true;
+            //online = true;
             transform.position = gmr.SpawnPoints[gmr.PlayerID];
         }
         pos = transform.position;
     }
 
-    /*
+    
     // Update is called once per frame
     void Update () {
         if (pos != transform.position)
         {
-            Debug.Log("Sending Pos");
-
-            gmr.SendPos(transform.position);
+            gmr.nm.SendPos(transform.position, transform.rotation);
+            //gmr.SendPos(transform.position);
             pos = transform.position;
         }
 	}
-    */
+    
 }

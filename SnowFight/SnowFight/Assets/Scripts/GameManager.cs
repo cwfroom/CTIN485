@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     //NetworkManager nm;
-    PhotonNetworkManager nm;
+    public PhotonNetworkManager nm;
     public int PlayerID;
     public List<Vector3> SpawnPoints;
-    GhostController ghost;
+    public GhostController ghost;
 
 	// Use this for initialization
 	void Start () {
@@ -53,12 +53,6 @@ public class GameManager : MonoBehaviour {
     {
         ghost = g;
     }
-
-    public void SendPos(Vector3 vec, Quaternion rot)
-    {
-
-    }
-
 
 
     /*
