@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿/*
+
+using UnityEngine;
 using System.Collections;
 using System;
 using System.IO;
@@ -10,10 +12,18 @@ using System.Net.Sockets;
 
 public class NetworkManager : MonoBehaviour
 {
+    [Serializable]
+    public struct MessageBase {
+       public string str;
+        //int pid;
+       public float f0, f1, f2, f3, f4, f5;
+    }
+
+
     GameManager gmr;
 
-    //const string host = "127.0.0.1";
-    const string host = "104.236.7.195";
+    const string host = "127.0.0.1";
+    //const string host = "104.236.7.195";
     const int port = 10086;
     const int buffer_size = 1024;
 
@@ -44,46 +54,41 @@ public class NetworkManager : MonoBehaviour
         }
     }
 
-    private static byte[] MessageSerialize(int type, string str, Vector3 vec)
+    private static byte[] MessageSerialize(string str, Vector3 vec, Vector3 vec2)
     {
+        MessageBase mb = new MessageBase();
+        mb.str = str;
+        mb.f0 = vec.x;
+        mb.f1 = vec.y;
+        mb.f2 = vec.z;
+        mb.f3 = vec2.x;
+        mb.f4 = vec2.y;
+        mb.f5 = vec2.z;
+
         MemoryStream ms = new MemoryStream();
         BinaryFormatter bf = new BinaryFormatter();
-
-        bf.Serialize(ms, type);
-
-        switch (type)
-        {
-            case 0:
-                bf.Serialize(ms, str);
-                break;
-            case 1:
-                bf.Serialize(ms, str);
-                bf.Serialize(ms, vec.x);
-                bf.Serialize(ms, vec.y);
-                bf.Serialize(ms, vec.z);
-                break;
-        }
-
+        bf.Serialize(ms, mb);
         return ms.ToArray();
     }
 
-    private static int MessageDeserialize(byte[] msg, out string str, out Vector3 vec)
+    private static void MessageDeserialize(byte[] msg, out string str, out Vector3 vec, out Vector3 vec2)
     {
+        Debug.Log(msg);
+
         MemoryStream ms = new MemoryStream(msg);
         BinaryFormatter formatter = new BinaryFormatter();
-        int msgType = (int)formatter.Deserialize(ms);
-        str = (string)formatter.Deserialize(ms);
-        if (msgType > 0)
-        {
-            vec.x = (float)formatter.Deserialize(ms);
-            vec.y = (float)formatter.Deserialize(ms);
-            vec.z = (float)formatter.Deserialize(ms);
-        }
-        else
-        {
-            vec = Vector3.zero;
-        }
-        return msgType;
+        MessageBase mb = (MessageBase)formatter.Deserialize(ms);
+
+        
+        Debug.Log(mb.str);
+
+        str = mb.str;
+        vec.x = mb.f0;
+        vec.y = mb.f1;
+        vec.z = mb.f2;
+        vec2.x = mb.f3;
+        vec2.y = mb.f4;
+        vec2.z = mb.f5;
     }
 
     public void Connect()
@@ -115,28 +120,26 @@ public class NetworkManager : MonoBehaviour
             client_socket.Receive(buffer);
             string msg;
             Vector3 vec;
-            int type = MessageDeserialize(buffer, out msg, out vec);
-            if (type == 0)
-            {
-                ParseMessage(msg);
-            }else
-            {
-                ParseMessage(msg, vec);
-            }
+            Vector3 vec2;
+            MessageDeserialize(buffer, out msg, out vec, out vec2);
+            ParseMessage(msg, vec, vec2);
         }
-        
     }
 
     public void SendString(string str)
     {
-        Send(MessageSerialize(0, str, new Vector3()));
+        Send(MessageSerialize(str, new Vector3(), new Vector3()));
     }
 
     public void SendVector(string str, Vector3 vec)
     {
-        Send(MessageSerialize(1,str, vec));
+        Send(MessageSerialize(str, vec, new Vector3()));
     }
 
+    public void SendVector(string str, Vector3 vec, Vector3 vec2)
+    {
+        Send(MessageSerialize( str, vec, vec2));
+    }
 
     public void DisConnect()
     {
@@ -144,10 +147,12 @@ public class NetworkManager : MonoBehaviour
         client_socket.Close();
     }
 
-    private void ParseMessage(string msg)
+    private void ParseMessage(string msg, Vector3 vec, Vector3 vec2)
     {
         string[] results = msg.Split(':');
         string command = results[0];
+        Debug.Log(command);
+
         string value = results[1];
         switch (command) {
             case "PID":
@@ -156,6 +161,9 @@ public class NetworkManager : MonoBehaviour
             case "START":
                 ExecuteOnMainThread.Enqueue(() => { StartCoroutine(StartGameMainThread()); });       
                 break;
+            case "POS":
+                ExecuteOnMainThread.Enqueue(() => { StartCoroutine(ReceivePosMainThread(vec)); });
+                break;
         }
         
         Debug.Log(command);
@@ -163,30 +171,18 @@ public class NetworkManager : MonoBehaviour
 
     }
 
-    private void ParseMessage(string msg, Vector3 vec)
-    {
-        switch (msg) {
-            case "POS":
-                ExecuteOnMainThread.Enqueue(() => { StartCoroutine(ReceivePosMainThread(vec)); });
-                break;
-            
-        }
-
-        
-    }
-
     IEnumerator StartGameMainThread()
     {
         yield return null;
         gmr.LoadLevel();
     }
-
+    
     IEnumerator ReceivePosMainThread(Vector3 vec)
     {
         yield return null;
         gmr.ReceivePos(vec);
     }
-
+    
     void OnApplicationQuit()
     {
         DisConnect();
@@ -194,3 +190,5 @@ public class NetworkManager : MonoBehaviour
 
 
 }
+
+*/
