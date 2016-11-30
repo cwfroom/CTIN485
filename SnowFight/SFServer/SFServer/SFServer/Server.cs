@@ -9,6 +9,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SFServer
 {
+    
     public struct Vector3
     {
         public float x, y, z;
@@ -20,49 +21,46 @@ namespace SFServer
         }
     };
 
+    [Serializable]
+    struct MessageBase
+    {
+        public string str;
+        //int pid;
+        public float f0, f1, f2, f3, f4, f5;
+    }
+
 
     class Serializer
     {
-        public static byte[] MessageSerialize(int type, string str, Vector3 vec)
+        public static byte[] MessageSerialize(string str, Vector3 vec, Vector3 vec2)
         {
+            MessageBase mb = new MessageBase();
+            mb.str = str;
+            mb.f0 = vec.x;
+            mb.f1 = vec.y;
+            mb.f2 = vec.z;
+            mb.f3 = vec2.x;
+            mb.f4 = vec2.y;
+            mb.f5 = vec2.z;
+
             MemoryStream ms = new MemoryStream();
             BinaryFormatter bf = new BinaryFormatter();
-
-            bf.Serialize(ms, type);
-
-            switch (type)
-            {
-                case 0:
-                    bf.Serialize(ms, str);
-                    break;
-                case 1:
-                    bf.Serialize(ms, str);
-                    bf.Serialize(ms, vec.x);
-                    bf.Serialize(ms, vec.y);
-                    bf.Serialize(ms, vec.z);
-                    break;
-            }
-
+            bf.Serialize(ms, mb);
             return ms.ToArray();
         }
 
-        public static int MessageDeserialize(byte[] msg, out string str, out Vector3 vec)
+        public static void MessageDeserialize(byte[] msg, out string str, out Vector3 vec, out Vector3 vec2)
         {
             MemoryStream ms = new MemoryStream(msg);
             BinaryFormatter formatter = new BinaryFormatter();
-            int msgType = (int)formatter.Deserialize(ms);
-            str = (string)formatter.Deserialize(ms);
-            if (msgType > 0)
-            {
-                vec.x = (float)formatter.Deserialize(ms);
-                vec.y = (float)formatter.Deserialize(ms);
-                vec.z = (float)formatter.Deserialize(ms);
-            }
-            else
-            {
-                vec = new Vector3(0, 0, 0);
-            }
-            return msgType;
+            MessageBase mb = (MessageBase)formatter.Deserialize(ms);
+            str = mb.str;
+            vec.x = mb.f0;
+            vec.y = mb.f1;
+            vec.z = mb.f2;
+            vec2.x = mb.f3;
+            vec2.y = mb.f4;
+            vec2.z = mb.f5;
         }
 
     }
@@ -107,21 +105,19 @@ namespace SFServer
                     client_socket.Receive(buffer);
                     string msg;
                     Vector3 vec;
-                    int type = Serializer.MessageDeserialize(buffer,out msg,out vec);
-                    if (type > 0)
-                    {
-                        ParseMessage(msg, vec);
-                    }
-                }
+                    Vector3 vec2;
+                    Serializer.MessageDeserialize(buffer, out msg, out vec, out vec2);
+                    ParseMessage(msg, vec, vec2);
+            }
 
             }
 
             public void SendString(string str)
             {
-                Send(Serializer.MessageSerialize(0, str, new Vector3()));
+                Send(Serializer.MessageSerialize(str, new Vector3(), new Vector3()));
             }
 
-            private void ParseMessage(string msg, Vector3 vec)
+            private void ParseMessage(string msg, Vector3 vec, Vector3 vec2)
             {
                 string[] result = msg.Split(':');
                 string command = result[0];
@@ -132,8 +128,8 @@ namespace SFServer
 
                 switch (command)
                 {
-                    case "POS":
-                    server.SendToExcept(Serializer.MessageSerialize(1, "POS", vec), pid);
+                    case "POS": 
+                    server.SendToExcept(Serializer.MessageSerialize("POS", vec, new Vector3()), pid);
                         break;
 
                 }
@@ -169,7 +165,7 @@ namespace SFServer
                     Console.Write("Connection from " + client_socket.RemoteEndPoint.ToString() + "\n");
 
                     client_count++;
-                    if (client_count >= 2)
+                    if (client_count >= 1)
                     {
                         StartSession();       
                     }
@@ -181,7 +177,7 @@ namespace SFServer
                 foreach (ClientHandler ch in clients)
                 {
                     Console.Write("Starting session \n");
-                    SendToAll(Serializer.MessageSerialize(0, "START:", new Vector3(0, 0, 0)));
+                    SendToAll(Serializer.MessageSerialize("START:", new Vector3(0,0,0), new Vector3(0,0,0)));
                 }
             }
 

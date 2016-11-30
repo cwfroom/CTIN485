@@ -1,0 +1,12 @@
+namespace SnowFight.Sample;
+struct Vec3 {
+  x:float;
+  y:float;
+  z:float;
+}
+table MessageBase {
+  cmd:string;
+  vec:Vec3;
+  vec2:Vec3;
+}
+root_type MessageBase;

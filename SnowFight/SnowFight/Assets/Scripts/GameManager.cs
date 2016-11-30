@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-    NetworkManager nm;
+    //NetworkManager nm;
+    PhotonNetworkManager nm;
     public int PlayerID;
     public List<Vector3> SpawnPoints;
     GhostController ghost;
@@ -12,7 +13,8 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(gameObject);
-        nm = GetComponent<NetworkManager>();
+        //nm = GetComponent<NetworkManager>();
+        nm = GetComponent<PhotonNetworkManager>();
         SpawnPoints = new List<Vector3>();
     }
 	
@@ -23,10 +25,12 @@ public class GameManager : MonoBehaviour {
 
     public void LoadLobby()
     {
-        nm.Connect();
+        //nm.Connect();
+        nm.StartMatching();
         SceneManager.LoadScene("Lobby");
     }
 
+    [PunRPC]
     public void LoadLevel()
     {
         SceneManager.LoadScene("Level");
@@ -50,6 +54,14 @@ public class GameManager : MonoBehaviour {
         ghost = g;
     }
 
+    public void SendPos(Vector3 vec, Quaternion rot)
+    {
+
+    }
+
+
+
+    /*
     public void SendPos(Vector3 vec)
     {
         nm.SendVector("POS:" + PlayerID, vec);
@@ -61,7 +73,7 @@ public class GameManager : MonoBehaviour {
             ghost.transform.position = vec;
         }
     }
-
+    */
     
 
 }

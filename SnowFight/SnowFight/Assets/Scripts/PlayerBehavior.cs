@@ -18,6 +18,7 @@ public class PlayerBehavior : MonoBehaviour {
         pos = transform.position;
     }
 
+    /*
     // Update is called once per frame
     void Update () {
         if (pos != transform.position)
@@ -28,4 +29,5 @@ public class PlayerBehavior : MonoBehaviour {
             pos = transform.position;
         }
 	}
+    */
 }
