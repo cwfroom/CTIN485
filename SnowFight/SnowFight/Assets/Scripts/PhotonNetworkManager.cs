@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PhotonNetworkManager : MonoBehaviour {
     private GameManager gmr;
-    private static PhotonView ScenePhotonView;
+    public static PhotonView ScenePhotonView;
 
 
     public enum NetworkStates
@@ -58,15 +58,14 @@ public class PhotonNetworkManager : MonoBehaviour {
 
     public void OnJoinedRoom()
     {
-
+        Debug.Log("Network ID: " + PhotonNetwork.player.ID);
         if (PhotonNetwork.isMasterClient)
         {
-            //networkPlayerID = PhotonNetwork.player.ID;
-           // gamePlayerID = 0;
+            gmr.PlayerID = 0;
+        }else
+        {
+            gmr.PlayerID = 1;
         }
-
-        Debug.Log("Network ID: " + PhotonNetwork.player.ID);
-
     }
 
     public void OnPhotonPlayerConnected(PhotonPlayer player)
@@ -79,9 +78,10 @@ public class PhotonNetworkManager : MonoBehaviour {
             {
                 ScenePhotonView.RPC("LoadLevel", PhotonTargets.All);
             }
-
         }
     }
+
+
 
 
 

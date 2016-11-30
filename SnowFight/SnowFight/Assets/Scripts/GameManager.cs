@@ -53,8 +53,15 @@ public class GameManager : MonoBehaviour {
     {
         ghost = g;
     }
-    /*
 
+    public void SendPos(Vector3 vec, Quaternion rot)
+    {
+
+    }
+
+
+
+    /*
     public void SendPos(Vector3 vec)
     {
         nm.SendVector("POS:" + PlayerID, vec);
